@@ -20,7 +20,7 @@ const Board = () => {
     if (!destination) return;
 
     if (type === "column") {
-      const entries = Array.from(board.columns.entries());
+      const entries : Array<[TypedColumn, Column]> = Array.from(board.columns.entries());
       const [removed] = entries.splice(source.index, 1);
       entries.splice(destination.index, 0, removed);
       const rearrangedColumns = new Map(entries);
