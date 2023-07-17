@@ -1,13 +1,14 @@
 "use client"
 
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
-import logo from '@/public/images/logo.png'
+import logo2 from '@/public/images/logo2.png'
+import logo3 from '@/public/images/logo3.png'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import Avatar from 'react-avatar';
 import { useBoardStore } from '@/store/BoardStore'
 import { UserCircleIcon } from '@heroicons/react/24/solid';
-import  fetchSuggestion  from '@/lib/fetchSuggestion'
+import fetchSuggestion from '@/lib/fetchSuggestion'
 
 const Header = () => {
 
@@ -21,10 +22,10 @@ const Header = () => {
     const [suggestion, setSuggestion] = useState<String>("")
 
     console.log(board);
-    
+
     useEffect(() => {
         if (board.columns.size === 0) {
-          return;
+            return;
         }
         setLoading(true);
 
@@ -35,7 +36,7 @@ const Header = () => {
         }
 
         fetchSuggestionFunc();
-      }, [board]);
+    }, [board]);
 
 
     return (
@@ -45,13 +46,10 @@ const Header = () => {
 
                 </div>
 
-                <Image
-                    src={logo}
-                    alt='logo'
-                    width={300}
-                    height={100}
-                    className='w-44 md:w-56 pb-10 md:pb-0'
-                />
+                
+                <div className="w-48 md:w-72 pb-10 md:pb-0">
+                    <Image src={logo3} alt="logo" width={288} height={108} />
+                </div>
                 <div className='flex items-center space-x-5 flex-1 justify-end w-full'>
                     <form action="" className='flex items-center space-x-5 bg-white rounded-md p-2 shadow-md flex-1 md:flex-initial'>
                         <MagnifyingGlassIcon className='h-6 w-6 text-gray-400' />

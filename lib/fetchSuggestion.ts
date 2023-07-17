@@ -17,11 +17,13 @@ const fetchSuggestion = async (board : Board) => {
         body : JSON.stringify({todos})
     })
 
-    const GPTdata = await response.json();
-    const {content} = GPTdata
+    if(response){
+        const GPTdata = await response.json();
+        const {content} = GPTdata
+        return content;
+    }
     
     
-    return content;
 }
 
 export default fetchSuggestion;
