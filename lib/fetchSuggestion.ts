@@ -27,4 +27,3 @@ const fetchSuggestion = async (board : Board) => {
 }
 
 export default fetchSuggestion;
-
