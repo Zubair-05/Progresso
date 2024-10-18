@@ -12,6 +12,8 @@ import {
     ImageIcon,
 } from "lucide-react";
 import {account} from "@/appwrite";
+import Image from "next/image";
+import logo3 from "@/public/images/logo3.png";
 const sidebarItems = [
     { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
     { href: "/social-share", icon: Share2Icon, label: "Social Share" },
@@ -43,58 +45,61 @@ export default function AppLayout({
 
     return (
         <div className="drawer lg:drawer-open">
-            <input
-                id="sidebar-drawer"
-                type="checkbox"
-                className="drawer-toggle"
-                checked={sidebarOpen}
-                onChange={() => setSidebarOpen(!sidebarOpen)}
-            />
+            {/*<input*/}
+            {/*    id="sidebar-drawer"*/}
+            {/*    type="checkbox"*/}
+            {/*    className="drawer-toggle"*/}
+            {/*    checked={sidebarOpen}*/}
+            {/*    onChange={() => setSidebarOpen(!sidebarOpen)}*/}
+            {/*/>*/}
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
                 <header className="w-full bg-base-200">
-                  {/*  <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">*/}
-                  {/*      <div className="flex-none lg:hidden">*/}
-                  {/*          <label*/}
-                  {/*              htmlFor="sidebar-drawer"*/}
-                  {/*              className="btn btn-square btn-ghost drawer-button"*/}
-                  {/*          >*/}
-                  {/*              <MenuIcon />*/}
-                  {/*          </label>*/}
-                  {/*      </div>*/}
-                  {/*      <div className="flex-1">*/}
-                  {/*          <Link href="/" onClick={handleLogoClick}>*/}
-                  {/*              <div className="btn btn-ghost normal-case text-2xl font-bold tracking-tight cursor-pointer">*/}
-                  {/*                 Progresso*/}
-                  {/*              </div>*/}
-                  {/*          </Link>*/}
-                  {/*      </div>*/}
-                  {/*/!*      <div className="flex-none flex items-center space-x-4">*!/*/}
-                  {/*/!*          {user && (*!/*/}
-                  {/*/!*              <>*!/*/}
-                  {/*/!*                  <div className="avatar">*!/*/}
-                  {/*/!*                      <div className="w-8 h-8 rounded-full">*!/*/}
-                  {/*/!*                          <img*!/*/}
-                  {/*/!*                              src={user.imageUrl}*!/*/}
-                  {/*/!*                              alt={*!/*/}
-                  {/*/!*                                  user.username || user.emailAddresses[0].emailAddress*!/*/}
-                  {/*/!*                              }*!/*/}
-                  {/*/!*                          />*!/*/}
-                  {/*/!*                      </div>*!/*/}
-                  {/*/!*                  </div>*!/*/}
-                  {/*/!*                  <span className="text-sm truncate max-w-xs lg:max-w-md">*!/*/}
-                  {/*/!*  {user.username || user.emailAddresses[0].emailAddress}*!/*/}
-                  {/*/!*</span>*!/*/}
-                  {/*/!*                  <button*!/*/}
-                  {/*/!*                      onClick={handleSignOut}*!/*/}
-                  {/*/!*                      className="btn btn-ghost btn-circle"*!/*/}
-                  {/*/!*                  >*!/*/}
-                  {/*/!*                      <LogOutIcon className="h-6 w-6" />*!/*/}
-                  {/*/!*                  </button>*!/*/}
-                  {/*/!*              </>*!/*/}
-                  {/*/!*          )}*!/*/}
-                  {/*/!*      </div>*!/*/}
-                  {/*  </div>*/}
+                    <div className='m-3 w-48 md:w-72 pb-10 md:pb-0'>
+                        <Image src={logo3} alt='logo' width={288} height={108}/>
+                    </div>
+                    {/*  <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">*/}
+                    {/*      <div className="flex-none lg:hidden">*/}
+                    {/*          <label*/}
+                    {/*              htmlFor="sidebar-drawer"*/}
+                    {/*              className="btn btn-square btn-ghost drawer-button"*/}
+                    {/*          >*/}
+                    {/*              <MenuIcon />*/}
+                    {/*          </label>*/}
+                    {/*      </div>*/}
+                    {/*      <div className="flex-1">*/}
+                    {/*          <Link href="/" onClick={handleLogoClick}>*/}
+                    {/*              <div className="btn btn-ghost normal-case text-2xl font-bold tracking-tight cursor-pointer">*/}
+                    {/*                 Progresso*/}
+                    {/*              </div>*/}
+                    {/*          </Link>*/}
+                    {/*      </div>*/}
+                    {/*/!*      <div className="flex-none flex items-center space-x-4">*!/*/}
+                    {/*/!*          {user && (*!/*/}
+                    {/*/!*              <>*!/*/}
+                    {/*/!*                  <div className="avatar">*!/*/}
+                    {/*/!*                      <div className="w-8 h-8 rounded-full">*!/*/}
+                    {/*/!*                          <img*!/*/}
+                    {/*/!*                              src={user.imageUrl}*!/*/}
+                    {/*/!*                              alt={*!/*/}
+                    {/*/!*                                  user.username || user.emailAddresses[0].emailAddress*!/*/}
+                    {/*/!*                              }*!/*/}
+                    {/*/!*                          />*!/*/}
+                    {/*/!*                      </div>*!/*/}
+                    {/*/!*                  </div>*!/*/}
+                    {/*/!*                  <span className="text-sm truncate max-w-xs lg:max-w-md">*!/*/}
+                    {/*/!*  {user.username || user.emailAddresses[0].emailAddress}*!/*/}
+                    {/*/!*</span>*!/*/}
+                    {/*/!*                  <button*!/*/}
+                    {/*/!*                      onClick={handleSignOut}*!/*/}
+                    {/*/!*                      className="btn btn-ghost btn-circle"*!/*/}
+                    {/*/!*                  >*!/*/}
+                    {/*/!*                      <LogOutIcon className="h-6 w-6" />*!/*/}
+                    {/*/!*                  </button>*!/*/}
+                    {/*/!*              </>*!/*/}
+                    {/*/!*          )}*!/*/}
+                    {/*/!*      </div>*!/*/}
+                    {/*  </div>*/}
                 </header>
                 {/* Page content */}
                 <main className="flex-grow">
@@ -128,15 +133,15 @@ export default function AppLayout({
             {/*            ))}*/}
             {/*        </ul>*/}
             {/*        /!*{user && (*!/*/}
-                        <div className="p-4">
-                            <button
-                                onClick={handleSignOut}
-                                className="btn btn-outline btn-error w-full"
-                            >
-                                <LogOutIcon className="mr-2 h-5 w-5" />
-                                Sign Out
-                            </button>
-                        </div>
+            {/*            <div className="p-4">*/}
+            {/*                <button*/}
+            {/*                    onClick={handleSignOut}*/}
+            {/*                    className="btn btn-outline btn-error w-full"*/}
+            {/*                >*/}
+            {/*                    <LogOutIcon className="mr-2 h-5 w-5" />*/}
+            {/*                    Sign Out*/}
+            {/*                </button>*/}
+            {/*            </div>*/}
             {/*        /!*)}*!/*/}
             {/*    </aside>*/}
             {/*</div>*/}
